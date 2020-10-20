@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "automating-anki"
+version = "0.1.0"
+authors = ["Liam Vanderpoel"]
+description = "Automating the creation of Anki flashcards for language learning"
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/VanderpoelLiam/automating-anki"
+repository = "https://github.com/VanderpoelLiam/automating-anki"
+keywords = ["anki"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
