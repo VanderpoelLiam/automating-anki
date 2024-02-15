@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "automating-anki"
 version = "0.1.0"
-authors = ["Liam Vanderpoel"]
+authors = ["Liam van der Poel"]
 description = "Automating the creation of Anki flashcards for language learning"
 license = "MIT"
 readme = "README.md"
