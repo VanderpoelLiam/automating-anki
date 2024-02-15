@@ -11,9 +11,21 @@ keywords = ["anki"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+requests = "^2.24.0"
+pyperclip = "^1.8.1"
+selenium = "^3.141.0"
+pynput = "^1.7.1"
+argparse = "^1.4.0"
+uuid = "^1.30"
+mwclient = "^0.10.1"
+wikitextparser = "^0.46.0"
+python-xlib = "^0.28"
 
 [tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+main = "automating_anki.main:cli"
