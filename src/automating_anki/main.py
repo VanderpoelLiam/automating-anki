@@ -1,17 +1,20 @@
-#! python3
-
-# main.py - Assists creation of german anki card using word from the command
-# line or clipboard
-
+"""Create German Anki Cards."""
 import argparse
+
 from pyperclip import paste
-from automating_anki.browser import getDriver, loadWordReference, getTranslation
-from automating_anki.note import Note
+
+from automating_anki.browser import getDriver, getTranslation, loadWordReference
 from automating_anki.listener import listenForCopy
+from automating_anki.note import Note
 
 
 def main(word, driver):
-    # note = Note("Generated Deck", word)
+    """Create a Anki card for the given word.
+
+    Args:
+        word: The word for which the note is being created.
+        driver: The driver object for interacting with the web page.
+    """
     note = Note("German Words and Grammar", word)
 
     loadWordReference(driver, word)
@@ -26,18 +29,21 @@ def main(word, driver):
     note.setImage(driver)
     note.uploadNote()
 
+
 def cli():
-    parser = argparse.ArgumentParser(description='Create German Anki Cards.')
-    parser.add_argument('-r',
-                        required=False,
-                        action='store_true',
-                        default=False,
-                        help='Repeat the card creation process (t/F).')
+    """Command line interface to create German Anki cards."""
+    parser = argparse.ArgumentParser(description="Create German Anki Cards.")
+    parser.add_argument(
+        "-r",
+        required=False,
+        action="store_true",
+        default=False,
+        help="Repeat the card creation process (t/F).",
+    )
 
-    parser.add_argument('--word',
-                        default=paste(),
-                        help='Create Anki Card with this word.')
-
+    parser.add_argument(
+        "--word", default=paste(), help="Create Anki Card with this word."
+    )
 
     args = parser.parse_args()
 

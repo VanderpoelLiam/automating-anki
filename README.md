@@ -42,4 +42,4 @@ To run the flashcard creation tool, run:
 poetry run main
 ```
 
-TODO: Explain that need to have anki install on the machine and running before can run the tool. Also that you need to install a specific anki addon.
+TODO: Explain that need to have anki install on the machine and running before can run the tool. Also that you need to install AnkiConnect anki addon.

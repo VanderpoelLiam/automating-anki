@@ -12,6 +12,7 @@ python = "3.10.12"
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.6.2"
 pytest = "^8.0.1"
+pytest-cov = "^4.1.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -19,3 +20,13 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 main = "automating_anki.main:cli"
+
+[tool.coverage.paths]
+source = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["automating_anki"]
+
+[tool.coverage.report]
+show_missing = true
