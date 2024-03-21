@@ -31,12 +31,8 @@ def loadWordReference(driver, word):
     driver.execute_script("window.stop();")
     listenForNext()
 
-def saveImage(filename):
-    # click(button='right')
-    # press('down', presses=10)
-    # press('enter')
-    src = paste()
-    urlretrieve(src, filename)
+def saveImage(image_link, filename):
+    urlretrieve(image_link, filename)
     return 1
 
 def getImage(driver, sentence, filename):
@@ -48,7 +44,8 @@ def getImage(driver, sentence, filename):
     while result is None:
         try:
             listenForNext()
-            result = saveImage(filename)
+            image_link = paste()
+            result = saveImage(image_link, filename)
         except:
              pass
 
